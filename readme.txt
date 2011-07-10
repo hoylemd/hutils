@@ -7,7 +7,7 @@ Package breakdown:
 Modules:
 	numberLists
 	general
-
+	colours
 	
 Module breakdown:
 
@@ -20,6 +20,9 @@ general:
 		isNumeric(number): Returns true if <number> is a number, and false if it is not.
 		
 		readFile(file_path): Returns the contents of the file describes by <file_path>. Throws IOErrors.
+		
+colours:
+	contains a list of colour macros
 		
 Installation Instructions:
 	Windows:
