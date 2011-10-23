@@ -54,4 +54,7 @@ int main (void)
     top->outputList(new string(""));
     cout << endl;
 
+    temp = new Token(top);
+    temp->outputList(new string("|"));
+
 }

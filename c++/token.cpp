@@ -13,6 +13,21 @@ Token::Token(tokenType type, string * value)
     this->type = type;
 }
 
+// Copy constructor
+Token::Token(Token * other)
+{
+    if (other)
+    {
+        this->value = new string(*(other->getValue()));
+        this->type = other->getType();
+    }
+    else
+    {
+        cerr << "attempt to copy a null token.";
+        exit(0);
+    }
+}
+
 // Destructor
 Token::~Token()
 {
