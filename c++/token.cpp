@@ -6,7 +6,6 @@
 
 using namespace std;
 #include "token.h"
-#include <cstdio>
 // Constructor
 Token::Token(tokenType type, string * value)
 {
@@ -134,4 +133,44 @@ string * Token::toString()
 
     // return the string
     return returner;
+}
+
+
+// Outputter
+void Token::outputList(string * delimiter)
+{
+    Token * current = this;
+    string *outString;
+
+    outString = current->getValue();
+    cout << *outString;
+    current = current->getNext();
+
+    while (current)
+    {
+        cout << *delimiter;
+        outString = current->getValue();
+        cout << *outString;
+        current = current->getNext();
+    }
+}
+
+// Outputter
+void Token::outputList(fstream out, string * delimiter)
+{
+    Token * current = this;
+    string *outString;
+
+    outString = current->getValue();
+    out << *outString;
+    current = current->getNext();
+
+    while (current)
+    {
+        out << &delimiter;
+        outString = current->getValue();
+        out << *outString;
+        current = current->getNext();
+    }
+
 }

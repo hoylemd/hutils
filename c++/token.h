@@ -6,7 +6,10 @@
 
 using namespace std;
 #include <cstdlib>
+#include <cstdio>
 #include <string>
+#include <iostream>
+#include <fstream>
 
 // Token type list.
 #define MAXNUMTOKENS    64
@@ -31,13 +34,10 @@ class Token
     tokenType type;
     Token * next;
     Token * prev;
-    static bool initialized;
-    static void initialize();
 
 public:
     Token(tokenType, string *);
     ~Token();
-
     static string * typeToString(tokenType);
     static Token * attachLists(Token *, Token *);
 
@@ -52,6 +52,8 @@ public:
     Token * append(Token *);       // appends this list to the provided
     Token * concat(Token *);       // appends the provided to this list
     string * toString();
+    void outputList(string *);
+    void outputList(fstream, string *);
 };
 #define TOKENCLASS
 #endif
